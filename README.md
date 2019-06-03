@@ -7,6 +7,9 @@ A sample mini auth service that implementing client creds flow with jwt.
 3. Copy the file `.env.sample` to your `.env` file
 4. Start the server `npm start`
 
+### Run the Test
+- To run the test type `npm test`
+
 ### Prepare Database
 The service is using MongoDb as its database. to get the connection string (DB_CONNECT value):
 1. Create your free account at https://cloud.mongodb.com
@@ -47,6 +50,3 @@ The service is using MongoDb as its database. to get the connection string (DB_C
   -H 'Content-Type: application/json' \
   -H 'cache-control: no-cache'
   ```
-
-### WIP
-- Unit Test
