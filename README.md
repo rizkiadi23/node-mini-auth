@@ -1,4 +1,4 @@
-### Mini Auth Service
+## Simple Module Authentication
 A sample mini auth service that implementing client creds flow with jwt.
 
 ### Installation
@@ -13,10 +13,40 @@ The service is using MongoDb as its database. to get the connection string (DB_C
 2. Create your Clusters & Collections
 3. Generate your connection string and copy the value to `DB_CONNECT` in your .env file
 
-### Test API
-1. Register: `localhost:3000/api/v1/auth/register`
+### cURL Request to Test The APIs
+1. Register:
+  ```sh
+  curl -X POST \
+    http://localhost:3000/api/v1/auth/register \
+    -H 'Cache-Control: no-cache' \
+    -H 'Connection: keep-alive' \
+    -H 'Content-Type: application/json' \
+    -d '{
+    "name": "usertest1",
+    "email": "usertest1@gmail.com",
+    "password": "usertest1"
+  }'
+  ```
 2. Login: `localhost:3000/api/v1/auth/login`
+  ```sh
+  curl -X POST \
+  http://localhost:3000/api/v1/auth/login \
+  -H 'Cache-Control: no-cache' \
+  -H 'Content-Type: application/json' \
+  -H 'cache-control: no-cache' \
+  -d '{
+    "email": "usertest1@gmail.com",
+    "password": "usertest1"
+  }'
+  ```
 3. Retrieve Post: `localhost:3000/api/v1/posts`
+  ```sh
+  curl -X GET \
+  http://localhost:3000/api/v1/posts \
+  -H 'Cache-Control: no-cache' \
+  -H 'Content-Type: application/json' \
+  -H 'cache-control: no-cache'
+  ```
 
 ### WIP
 - Unit Test
